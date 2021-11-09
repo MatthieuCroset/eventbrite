@@ -1,8 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = []
-    Event.order(:id).reverse.each do |event|
-      @events << [event, User.find(event.user_id)]
+    @event = Event.all
   end
 
   def show

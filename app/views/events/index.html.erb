@@ -1,2 +1,34 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<h3>
+  Liste des événements :
+
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+    <th>ID de l'evenement</th>
+    <th>Nom de l'événement</th>
+    <th>Date</th>
+    <td>Lieu</td>
+  </tr>
+  <br>
+  <% @event.each do |event| %>
+   
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= event.title %> </td>
+      <td><%= event.start_date %></td>
+      <td><%= event.location %></td>
+      <td><%= link_to " Voir l'événement", event_path(event) %></td>
+    </tr>
+    
+  <% end %>
+  </tr>
+  </tbody>
+</table>
+<br><br>
+<%= link_to "Créer un nouvel événement", '/events/new' %>
+
+
+
+     
+   
